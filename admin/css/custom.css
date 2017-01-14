@@ -1,0 +1,91 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: Helvetica, sans-serif!important;
+}
+
+div.masthead-row {
+	text-align: center;
+	color: #ffffff;
+}
+
+div.masthead-banner {
+	padding: 0px;
+	background-image: url('/img/frozen_bubbles.jpg');
+	background-size: cover;
+}
+
+div.masthead-title {
+	color: #000000;
+	text-align: center;
+	font-weight: bold;
+	font-size: 5vw;
+	padding: 7vw;	
+}
+
+div.controls {
+	text-align: center;
+	background-color: #cccccc;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+div.controls-title,
+span.controls-title {
+	font-size: 16px;
+	font-weight: bold;	
+}
+
+div.center-img {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+div.center-img img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div.config-title {
+	font-weight: bold;
+	font-size: 18pt;
+}
+
+div#config-content-table {
+	margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    div.config-controls, 
+    div.config-title {
+    	text-align: center;
+    }
+    div.config-controls input, button {
+    	margin-left: auto;
+	    margin-right: auto;
+    }
+    div.center-img {
+    	text-align: left;
+    }
+    div.center-img img {
+    	height: 40px;
+    	width: 40px;
+    	float: left;
+    	margin-right: 15px;
+    }
+}
+
