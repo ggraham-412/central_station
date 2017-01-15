@@ -1,0 +1,31 @@
+{
+  "name": "central_station",
+  "version": "1.0.0",
+  "description": "An express.js application to serve out configuration constants with a simple bootstrap UI.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "node-persist": "^2.0.7",
+    "rwlock": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggraham-412/central_station.git"
+  },
+  "author": "Gregory Graham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ggraham-412/central_station/issues"
+  },
+  "homepage": "https://github.com/ggraham-412/central_station#readme"
+}
