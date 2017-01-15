@@ -9,11 +9,17 @@
  *
  */
 
+var default_data_dir = 'data';
+var data_dir = default_data_dir;
+if ( process.argv.length > 2 ) {
+    data_dir = process.argv[2];
+}
+
 // application components
 var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var business_logic = require('./bll.js')('data');
+var business_logic = require('./bll.js')(data_dir);
 var path = require('path');
 var cors = require('cors');
 
