@@ -9,24 +9,11 @@
  *
  */
 
-var default_data_dir = 'data';
-var data_dir = default_data_dir;
-if ( process.argv.length > 2 ) {
-    data_dir = process.argv[2];
-}
-
-// application components
-var express = require('express');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var business_logic = require('./bll.js')(data_dir);
-var path = require('path');
-var cors = require('cors');
-
 // local data
 var name = 'central_station';
 var version = '1.0.0';
 var port = 8081;  // default is 8081
+var data_dir = 'data';
 
 // Process args
 var usage = function() {
@@ -37,23 +24,40 @@ var parseArgs = function(args) {
 	if ( args.length === 0 ) return;
 	var i = 0;
 	while ( i < args.length ) {
-		switch (args[i]) {
-			case "-p":   // port number
-			    i++;
-			    if ( i < args.length ) {
-			    	port = parseInt(args[i])
-			    } else {
-			    	usage();
-			    }
-			    break;
-			case "-h":    // help
+	    switch (args[i]) {
+	    case "-d": // data dir
+			i++
+			if ( i < args.length ) {
+			    data_dir = args[i];
+			}
+			else {
 			    usage();
-			    break;
+			}
+			break;
+		case "-p":   // port number
+		    i++;
+		    if ( i < args.length ) {
+		    	port = parseInt(args[i])
+		    } else {
+		    	usage();
+		    }
+		    break;
+		case "-h":    // help
+		    usage();
+		    break;
 		}
 		i++;
 	}
 }
 parseArgs(process.argv.slice(2));
+
+// application components
+var express = require('express');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var business_logic = require('./bll.js')(data_dir);
+var path = require('path');
+var cors = require('cors');
 
 // build application
 var app = express();
@@ -131,4 +135,4 @@ app.use(express.static(static_path));
 
 // Start server
 app.listen(port);
-console.log( 'Server started on port ' + port);
+console.log( 'Server started on port ' + port + ' using data dir ' + data_dir);
